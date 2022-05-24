@@ -9,7 +9,7 @@ export async function makeAPingInRedis(){
     client.connect();
     await client.set("value", "Connection stablished");
     const message = await client.get("value");
-    client.quit();
+    await client.quit();
 
     console.log(message);
     return message;
