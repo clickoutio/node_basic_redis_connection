@@ -4,7 +4,9 @@
   "description": "Basic node creation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "start": "tsc & node .",
+    "dev": "tsc -w & nodemon"
   },
   "repository": {
     "type": "git",
