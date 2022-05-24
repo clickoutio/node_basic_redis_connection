@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "NODE_ENV=production node ./dist/index.js",
-    "start:dev": "NODE_ENV=development nodemon"
+    "start:dev": "REDIS_URL=\"redis://localhost:6379\" NODE_ENV=development nodemon"
   },
   "nodemonConfig": {
     "watch": [
