@@ -7,8 +7,10 @@ export async function makeAPingInRedis(){
     });
 
     client.connect();
-    const message = await client.get("ping");
+    await client.set("value", "Connection stablished");
+    const message = client.get("value");
     client.quit();
 
+    console.log(message);
     return message;
 }
