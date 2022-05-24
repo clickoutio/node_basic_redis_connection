@@ -7,9 +7,17 @@ baseRouter.get("/", (req, res)=> res.status(200).send("que pasa"));
 
 baseRouter.get("/testRedisConnection", async (req, res) => {
 
-    const text = await makeAPingInRedis();
+    try{
+        const text = await makeAPingInRedis();
+        res.status(200).send(text);
+    }
+    catch(err){
+        res.status(500).json({
+            success: false,
+            errMsg: err.message
+        });
+    }
 
-    res.status(200).send(text);
 });
 
 export default baseRouter;
