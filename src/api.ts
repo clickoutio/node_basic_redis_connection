@@ -50,8 +50,14 @@ baseRouter.get("/user/:name", async (req: Request, res: Response) => {
 
 baseRouter.get('/testHttpConnection', async (req: Request, res: Response) => {
 
-    const data = await axios.get("https://cat-fact.herokuapp.com/facts/")
-    res.json(data.data);
+    const httpUrl = "https://cat-fact.herokuapp.com/facts/";
+    try{
+        const data = await axios.get(httpUrl);
+        res.json(data.data);
+    }
+    catch(err){
+        res.send("Unable to connect to " + httpUrl);
+    }
 });
 
 
