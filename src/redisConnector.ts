@@ -4,7 +4,8 @@ export async function makeAPingInRedis(){
 
     const client = new Redis({
         host: process.env.REDIS_HOST,
-        port: 6379
+        port: 6379,
+        timeout: 2000
     });
 
     //await client.connect();
@@ -14,5 +15,4 @@ export async function makeAPingInRedis(){
 
     console.log(message);
     return message;
-    return "didnt failed";
 }
