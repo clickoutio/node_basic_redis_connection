@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Request, Response, Router } from "express";
 import { makeAPingInRedis } from "./redisConnector";
-import { UserModel } from "./user";
+//import { UserModel } from "./user";
 
 const baseRouter = Router();
 
@@ -22,6 +22,7 @@ baseRouter.get("/testRedisConnection", async (req, res) => {
 
 });
 
+/*
 baseRouter.post("/user", async (req: Request, res: Response) => {
 
     const user = req.body;
@@ -47,6 +48,7 @@ baseRouter.get("/user/:name", async (req: Request, res: Response) => {
 
     res.json(user);
 });
+*/
 
 baseRouter.get('/testHttpConnection', async (req: Request, res: Response) => {
 
