@@ -3,6 +3,7 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import helmet from "helmet";
 import apiRouter from "./api";
+import mongoose from "mongoose";
 
 //import apiRouter from "./api";
 
@@ -38,6 +39,13 @@ if (process.env.NODE_ENV === "production") {
  **********************************************************************************/
 app.use("/", apiRouter);
 
+
+/***********************************************************************************
+ *                              Connect to Mongo 
+ **********************************************************************************/
+let dbUrl = process.env.MONGO_URL as string;
+mongoose.connect(dbUrl);
+console.log("Connected to: " + dbUrl);
 
 // Export here and start in a diff file (for testing).
 export default app;
