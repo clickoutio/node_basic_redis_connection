@@ -2,6 +2,8 @@ import Redis from "ioredis";
 
 export async function makeAPingInRedis(){
 
+    console.log("Redis host: " +   process.env.REDIS_HOST);
+
     const client = new Redis({
         host: process.env.REDIS_HOST,
         port: 6379,
