@@ -8,10 +8,8 @@ export async function makeAPingInRedis(){
         timeout: 2000
     });
 
-    //await client.connect();
     await client.set("value", "Connection stablished");
     const message = await client.get("value");
-    //await client.quit();
 
     console.log(message);
     return message;
