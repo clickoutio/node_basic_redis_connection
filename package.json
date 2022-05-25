@@ -28,15 +28,17 @@
   },
   "homepage": "https://github.com/clickoutio/node_basic_redis_connection#readme",
   "dependencies": {
-    "@types/helmet": "^4.0.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.18.1",
     "helmet": "^5.1.0",
-    "ioredis": "^5.0.5"
+    "ioredis": "^5.0.5",
+    "mongoose": "^6.3.4"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
+    "@types/helmet": "^4.0.0",
     "@types/ioredis": "^4.28.10",
+    "@types/mongoose": "^5.11.97",
     "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.35",
     "@types/nodemon": "^1.19.1",
