@@ -43,11 +43,9 @@ app.use("/", apiRouter);
 /***********************************************************************************
  *                              Connect to Mongo 
  **********************************************************************************/
-/*
 let dbUrl = process.env.MONGO_URL as string;
 mongoose.connect(dbUrl);
 console.log("Connected to: " + dbUrl);
-*/
 
 // Export here and start in a diff file (for testing).
 export default app;
