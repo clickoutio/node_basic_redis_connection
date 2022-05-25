@@ -33,6 +33,7 @@ baseRouter.post("/user", async (req: Request, res: Response) => {
     res.status(200).send();
 });
 
+/*
 baseRouter.get("/user",  async (req: Request, res: Response) => {
 
     const users = await UserModel.find({});
@@ -47,6 +48,7 @@ baseRouter.get("/user/:name", async (req: Request, res: Response) => {
 
     res.json(user);
 });
+*/
 
 baseRouter.get('/testHttpConnection', async (req: Request, res: Response) => {
 
