@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Request, Response, Router } from "express";
 import { makeAPingInRedis } from "./redisConnector";
 import { UserModel } from "./user";
@@ -32,12 +33,25 @@ baseRouter.post("/user", async (req: Request, res: Response) => {
     res.status(200).send();
 });
 
+baseRouter.get("/user",  async (req: Request, res: Response) => {
+
+    const users = await UserModel.find({});
+
+    res.json(users);
+})
+
 baseRouter.get("/user/:name", async (req: Request, res: Response) => {
     const name = req.params.name;
 
     const user = await UserModel.findOne({firstName: name});
 
     res.json(user);
+});
+
+baseRouter.get('/testHttpConnection', async (req: Request, res: Response) => {
+
+    const data = await axios.get("https://cat-fact.herokuapp.com/facts/")
+    res.json(data.data);
 });
 
 
