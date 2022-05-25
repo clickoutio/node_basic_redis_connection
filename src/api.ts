@@ -1,4 +1,4 @@
-import { Router } from "express";
+import { Request, Response, Router } from "express";
 import { makeAPingInRedis } from "./redisConnector";
 
 const baseRouter = Router();
@@ -19,5 +19,10 @@ baseRouter.get("/testRedisConnection", async (req, res) => {
     }
 
 });
+
+baseRouter.post("/user", async (req: Request, res: Response) => {
+
+});
+
 
 export default baseRouter;
