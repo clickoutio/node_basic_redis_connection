@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "NODE_ENV=production node ./dist/index.js",
-    "start:dev": "REDIS_HOST=localhost NODE_ENV=development PORT=3000 nodemon"
+    "start:dev": "REDIS_HOST=localhost NODE_ENV=development PORT=3000 MONGO_URL=mongodb+srv://javi:cgSD9gGhQ9L4ayjE@cluster0.yik8e.mongodb.net/redisTestDb?retryWrites=true&w=majority nodemon"
   },
   "nodemonConfig": {
     "watch": [
