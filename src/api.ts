@@ -32,7 +32,7 @@ baseRouter.post("/user", async (req: Request, res: Response) => {
     res.status(200).send();
 });
 
-baseRouter.get("user/:name", async (req: Request, res: Response) => {
+baseRouter.get("/user/:name", async (req: Request, res: Response) => {
     const name = req.params.name;
 
     const user = await UserModel.findOne({firstName: name});
